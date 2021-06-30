@@ -13,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Beer {
+public class BeerModel {
 
     private UUID id;
     private Integer version;
