@@ -6,8 +6,9 @@ import org.springframework.stereotype.Component;
 import uk.co.joecastle.msscbeerservice.entity.Beer;
 import uk.co.joecastle.msscbeerservice.repository.BeerRepository;
 
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
-
+@Size
 @Component
 public class BeerLoader implements CommandLineRunner {
 
