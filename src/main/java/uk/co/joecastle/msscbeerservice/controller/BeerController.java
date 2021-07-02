@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import uk.co.joecastle.msscbeerservice.model.BeerModel;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -20,7 +21,7 @@ public class BeerController {
     }
 
     @PostMapping
-    public ResponseEntity<BeerModel> saveNewBeer(@RequestBody BeerModel beerModel) {
+    public ResponseEntity<BeerModel> saveNewBeer(@Valid @RequestBody BeerModel beerModel) {
         // TODO: Impl
 
         URI uri = ServletUriComponentsBuilder
@@ -34,7 +35,7 @@ public class BeerController {
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity<BeerModel> updateBeerById(@PathVariable String beerId, @RequestBody BeerModel beerModel) {
+    public ResponseEntity<BeerModel> updateBeerById(@PathVariable String beerId, @Valid @RequestBody BeerModel beerModel) {
         // TODO: Impl
         return ResponseEntity
                 .noContent()
