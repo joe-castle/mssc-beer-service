@@ -7,13 +7,14 @@ import uk.co.joecastle.msscbeerservice.model.BeerModel;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/beer")
 public class BeerController {
 
     @GetMapping("/{beerId}")
-    public ResponseEntity<BeerModel> getBeerById(@PathVariable String beerId) {
+    public ResponseEntity<BeerModel> getBeerById(@PathVariable UUID beerId) {
         // TODO: Impl
         return ResponseEntity
                 .ok(BeerModel.builder()
@@ -35,7 +36,7 @@ public class BeerController {
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity<BeerModel> updateBeerById(@PathVariable String beerId, @Valid @RequestBody BeerModel beerModel) {
+    public ResponseEntity<BeerModel> updateBeerById(@PathVariable UUID beerId, @Valid @RequestBody BeerModel beerModel) {
         // TODO: Impl
         return ResponseEntity
                 .noContent()
